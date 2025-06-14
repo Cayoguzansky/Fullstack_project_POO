@@ -5,15 +5,21 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Header />
 
-      {/* Configurando rotas para deixar o site mais dinâmico */}
-      <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/Login" element={<Login/>}/>
-      </Routes>
-    </BrowserRouter>
+    <div className="h-screen overflow-hidden flex flex-col">
+        <BrowserRouter>
+          <Header />
+
+          {/* Configurando rotas para deixar o site mais dinâmico */}
+          <main className="flex-1 overflow-y-auto no-scrollbar">
+            <Routes>
+              <Route path="/" element={<Home/>}/>
+              <Route path="/Login" element={<Login/>}/>
+            </Routes>
+          </main>
+        </BrowserRouter>
+    </div>
+    
   );
 }
 
